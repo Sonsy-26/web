@@ -12,9 +12,9 @@
             font-family: 'Orbitron', sans-serif;
             text-align: center;
             padding: 20px;
-            overflow: hidden;
-            position: relative;
             margin: 0; /* Ensures no default body margin */
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+            overflow-y: scroll; /* Enables vertical scrolling */
         }
         .matrix {
             position: fixed;
@@ -24,6 +24,13 @@
             height: 100%;
             z-index: -1;
             background: black;
+        }
+        .clock-container {
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
         }
         .sparkle {
             font-size: 2.5em;
@@ -70,9 +77,6 @@
             background: linear-gradient(90deg, #9400D3, white);
         }
         .time {
-            position: absolute;
-            top: 20px;
-            right: 20px;
             font-size: 1.5em;
             color: white;
         }
@@ -88,7 +92,9 @@
 </head>
 <body>
     <canvas class="matrix" id="matrixCanvas"></canvas>
-    <div class="time" id="liveTime"></div>
+    <div class="clock-container">
+        <div class="time" id="liveTime"></div>
+    </div>
     <h1 class="sparkle">ACT ZONE</h1>
     <div class="profile">
         <h2>Surendra.S</h2>
